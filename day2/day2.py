@@ -1,61 +1,66 @@
-
 with open('input.txt', 'r') as input_file:
     datas = input_file.readlines()
-    
-'''
-First col is what opponent plays
-
-A Y
-B X
-C Z
-
-Opponent
-A -> Rock
-B -> Paper
-C -> Scissor
-
-My
-X = Rock
-Y = Paper
-Z = Scissor
-
-If won, reward 
-    Rock = 1
-    Paper = 2
-    Scissor = 3
-    
-    Lost = 0
-    Draw = 3
-    Won = 6
-'''
 
 # Part 1
-results = []
+part1 = []
 for data in datas:
     opponent_hand, my_hand = data.strip('\n').split(' ')
     
     if opponent_hand == 'A':
         if my_hand == 'X':
-            results.append(1 + 3)
+            part1.append(1 + 3)
         elif my_hand == 'Y':
-            results.append(2 + 6)
+            part1.append(2 + 6)
         elif my_hand == 'Z':
-            results.append(3 + 0)
+            part1.append(3 + 0)
     
     elif opponent_hand == 'B':
         if my_hand == 'X':
-            results.append(1 + 0)
+            part1.append(1 + 0)
         elif my_hand == 'Y':
-            results.append(2 + 3)
+            part1.append(2 + 3)
         elif my_hand == 'Z':
-            results.append(3 + 6)
+            part1.append(3 + 6)
     
     elif opponent_hand == 'C':
         if my_hand == 'X':
-            results.append(1 + 6)
+            part1.append(1 + 6)
         elif my_hand == 'Y':
-            results.append(2 + 0)
+            part1.append(2 + 0)
         elif my_hand == 'Z':
-            results.append(3 + 3)
+            part1.append(3 + 3)
             
-print(f"Part1: {sum(results)}")
+print(f"Part1: {sum(part1)}")
+
+
+# Part 2
+part2 = []
+for data in datas:
+    opponent_hand, strategy = data.strip('\n').split(' ')
+    
+    if opponent_hand == 'A':
+        if strategy == 'X':
+            part2.append(0 + 3)
+        elif strategy == 'Y':
+            part2.append(3 + 1)
+        elif strategy == 'Z':
+            part2.append(6 + 2)
+    
+    elif opponent_hand == 'B':
+        if strategy == 'X':
+            part2.append(0 + 1)
+        elif strategy == 'Y':
+            part2.append(3 + 2)
+        elif strategy == 'Z':
+            part2.append(6 + 3)
+    
+    elif opponent_hand == 'C':
+        if strategy == 'X':
+            part2.append(0 + 2)
+        elif strategy == 'Y':
+            part2.append(3 + 3)
+        elif strategy == 'Z':
+            part2.append(6 + 1)
+            
+print(f"Part2: {sum(part2)}")
+    
