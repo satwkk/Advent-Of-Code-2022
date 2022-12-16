@@ -31,14 +31,10 @@ print(F"Part 1: {part1()}")
 # PART 2
 def part2() -> int:
     result = 0
-    elf_groups = []
-    
     for i in range(0, len(rucksacks), 3):
-        elf_groups.append(rucksacks[i:i+3])
-        
-    for elf_group in elf_groups:
+        group = rucksacks[i:i+3]
         common_items = dict()
-        for rucksack in elf_group:
+        for rucksack in group:
             for char in set(rucksack.strip('\n')):
                 if char in common_items:
                     common_items[char] = common_items[char] + 1
@@ -50,4 +46,4 @@ def part2() -> int:
                 result += map_ord_to_alph_index(k)
     return result
 
-print(F"Part 1: {part2()}")
+print(F"Part 2: {part2()}")
