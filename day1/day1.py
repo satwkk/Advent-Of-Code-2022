@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+
+# Question - https://adventofcode.com/2022/day/1
+
 with open('input.txt', 'r') as input_file:
     data = input_file.read()
 
