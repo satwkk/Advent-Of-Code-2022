@@ -1,5 +1,7 @@
 from typing import List
 
+# QUESTION: https://adventofcode.com/2022/day/5
+
 with open('E:\\Advent of Code\\2022\\day5\\input.txt', 'r') as input_file:
     lines = input_file.read()
     
