@@ -76,7 +76,11 @@ for idx, line in enumerate(commands):
 '''
 Part1
 
-Note: Kinda ugly algorithm but ok
+Kinda ugly algorithm but ok
+
+TODO: We can improve traversing by storing every files, subdirectories and subfiles inside a dictionary, rather than
+storing them in two separate lists. 
+
 '''
 part1_answers = []
 def initialize_size(dir: Dir):
