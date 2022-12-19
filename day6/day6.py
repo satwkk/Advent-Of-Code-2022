@@ -13,20 +13,20 @@ def part1():
     
     for line in lines:
         signal = line.strip()
-        char = 0
+        idx = 0
         substrs = list()
-        while char < len(signal):
+        while idx < len(signal):
             
             if len(substrs) == 4:
                 break
             
-            while signal[char] in substrs:
+            while signal[idx] in substrs:
                 substrs.pop(0)
                 
-            substrs.append(signal[char])
-            char += 1
+            substrs.append(signal[idx])
+            idx += 1
             
-        result.append(char)
+        result.append(idx)
         
     return result
 
@@ -38,20 +38,20 @@ def part2():
     
     for line in lines:
         signal = line.strip()
-        char = 0
+        idx = 0
         substrs = list()
-        while char < len(signal):
+        while idx < len(signal):
             
             if len(substrs) == 14:
                 break
             
-            while signal[char] in substrs:
+            while signal[idx] in substrs:
                 substrs.pop(0)
                 
-            substrs.append(signal[char])
-            char += 1
+            substrs.append(signal[idx])
+            idx += 1
             
-        result.append(char)
+        result.append(idx)
         
     return result
 
