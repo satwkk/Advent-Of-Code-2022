@@ -9,8 +9,8 @@ grid = [
     [3,3,5,4,9],
     [3,5,3,9,0],
 ]
-
 '''
+
 from input import grid
 
 col_len = len(grid)
@@ -31,11 +31,11 @@ for row in range(row_len):
             
             # Search left, right, top, bottom
             if (
-                max([grid[row][col-i] for i in range(1, col+1)]) < curr_tree or
-                max([grid[row][col+i] for i in range(1, col_len - col)]) < curr_tree or
+                max(grid[row][:col]) < curr_tree or
+                max(grid[row][col+1:]) < curr_tree or
                 max([grid[row-i][col] for i in range(1, row+1)]) < curr_tree or
                 max([grid[row+i][col] for i in range(1, row_len - row)]) < curr_tree
-            ):
+                ):
                 v = True
 
             if v:
