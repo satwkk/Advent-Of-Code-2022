@@ -57,8 +57,8 @@ for row in range(row_len):
         else:
             curr_tree = grid[row][col]
 
-            left = [grid[row][col-i] for i in range(1, col+1)]
-            right = [grid[row][col+i] for i in range(1, col_len - col)]
+            left = grid[row][:col][::-1]
+            right = grid[row][col+1:]
             top = [grid[row-i][col] for i in range(1, row+1)]
             bottom = [grid[row+i][col] for i in range(1, row_len - row)]
 
